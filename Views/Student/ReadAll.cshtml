@@ -1,0 +1,9 @@
+@model Classroom
+
+<h1>Hello World from default path!</h1>
+
+<ul>
+    @foreach(var student in @Model.getAll()){
+        @Html.Partial("ReadOne", student)
+    }
+</ul>

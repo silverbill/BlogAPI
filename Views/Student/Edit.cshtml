@@ -1,0 +1,11 @@
+@model Student
+
+Edit Student:
+
+<hr/>
+
+<form action="/students" method="post">
+    <div>Name: <input asp-for="Name"/></div>
+    <div>KnowsCSharp: <input asp-for="IKnowCSharp" /></div>
+    <button type="submit">Update</button>
+</form>
