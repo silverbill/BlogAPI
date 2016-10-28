@@ -4,8 +4,18 @@ Edit Student:
 
 <hr/>
 
-<form action="/students" method="post">
-    <div>Name: <input asp-for="Name"/></div>
-    <div>KnowsCSharp: <input asp-for="IKnowCSharp" /></div>
+<form asp-controller="Student" asp-action="Upsert" asp-route-returnurl="@ViewData["ReturnUrl"]">
+    <div>
+        <label asp-for="Name"></label>
+        <input asp-for="Name"/>
+    </div>
+
+    <div>
+        <label asp-for="IKnowCSharp"></label>
+        <input asp-for="IKnowCSharp"/>
+    </div>
+
+    <input asp-for="StudentId" type="hidden"/>
+    
     <button type="submit">Update</button>
 </form>

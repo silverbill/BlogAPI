@@ -24,17 +24,14 @@ public class Handler {
             .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
             .AddJsonFile($"appsettings.{env.EnvironmentName}.json", optional: true)
             .AddEnvironmentVariables();
-
         Configuration = builder.Build();
     }
 
     public void ConfigureServices(IServiceCollection services)
     {
-
         services.AddMvc(); //.AddXmlSerializerFormatters();
         services.AddSingleton<IClassroom, Classroom>();
         services.AddSwaggerGen();
-
         services.ConfigureSwaggerGen(options =>
         {
             options.SingleApiVersion(new Info
@@ -50,14 +47,14 @@ public class Handler {
     }
 
     public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory logger) {
-        logger.AddConsole(Configuration.GetSection("Logging"));
+        // logger.AddConsole(Configuration.GetSection("Logging"));
         logger.AddDebug();
 
-        if (env.IsDevelopment())
-        {
+        // if (env.IsDevelopment())
+        // {
             app.UseDeveloperExceptionPage();
             app.UseDatabaseErrorPage();
-        }
+        // }
 
         app.UseStaticFiles();
         app.UseMvc();

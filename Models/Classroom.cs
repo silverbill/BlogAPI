@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+// using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using System.ComponentModel.DataAnnotations;
 
 public interface IClassroom {
@@ -13,16 +13,20 @@ public interface IClassroom {
 }
 
 public class Student {
-    [Required]
+
+    [Display(Name = "Id")]
     public int StudentId;
-    [Required] 
+
+    [Display(Name = "Name")]
     public string Name;
-    [Required]
+
+    [Display(Name = "C#")]
     public bool IKnowCSharp = false;
 
     public Student(){
         StudentId = new Random().Next();
     }
+
 }
 
 public class Classroom : IClassroom {
