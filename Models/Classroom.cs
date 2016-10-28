@@ -13,20 +13,13 @@ public interface IClassroom {
 }
 
 public class Student {
-
-    [Display(Name = "Id")]
-    public int StudentId;
-
-    [Display(Name = "Name")]
-    public string Name;
-
-    [Display(Name = "C#")]
-    public bool IKnowCSharp = false;
+    public int StudentId {get; set;}
+    public string Name {get; set;}
+    public bool IKnowCSharp {get; set;} = false;
 
     public Student(){
         StudentId = new Random().Next();
     }
-
 }
 
 public class Classroom : IClassroom {

@@ -41,18 +41,19 @@ public class StudentController : Controller {
     }
 
     [HttpPost("{id}/edit")]
+    [ValidateAntiForgeryToken]
     public IActionResult Upsert([FromForm] Student student, int id){
-        Request.Form.Log();
-        id.Log();
-        student.Log();
+        // Request.Form.Log();
+        // student.Log();
 
-        // var s = classroom.get(id);
-        // if(s != null) {
-        //     classroom.delete(id);
-        // }
+        var s = classroom.get(id);
+        if(s != null) {
+            classroom.delete(id);
+        }
 
-        // student.StudentId = id;
-        // classroom.add(student);
-        return Ok("student currently is default");
+        // make sure that the id is the same as 
+        student.StudentId = id;
+        classroom.add(student);
+        return RedirectToAction("ReadAll");
     }
 }
