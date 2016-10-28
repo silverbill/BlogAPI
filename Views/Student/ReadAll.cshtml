@@ -2,8 +2,14 @@
 
 <h1>Hello World from default path!</h1>
 
-<ul>
+<hr>
+
+<div class="grid grid-2-400 grid-4-800">
     @foreach(var student in @Model.getAll()){
         @Html.Partial("ReadOne", student)
     }
-</ul>
+</div>
+
+<hr>
+
+<p>Want to create a <a href="/students/new">new student</a>?</p>

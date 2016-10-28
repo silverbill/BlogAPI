@@ -1,0 +1,12 @@
+@model Student
+<form asp-controller="Student" asp-action="Create">
+    <p>
+        <label asp-for="Name"></label>
+        <input asp-for="Name">
+    </p>
+    <p>
+        <label asp-for="IKnowCSharp"></label>
+        <input asp-for="IKnowCSharp">
+    </p>
+    <button type="submit">Save</button>
+</form>

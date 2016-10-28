@@ -1,3 +1,20 @@
+*, *:before, *:after {
+    box-sizing: border-box;
+}
+
+.grid {
+    font-size: 0;
+    & > * {
+        display: inline-block;
+        font-size: medium;
+    }
+    &:after {
+        content:"";
+        display: inline-block;
+        width: 100%;
+    }
+}
+
 @define-mixin grid_r $col, $width {
         @media (min-width: $(width)px) {
                 .grid-$(col)-$(width) {
@@ -14,4 +31,10 @@
 
 body {
     color: red;
+}
+
+.student {
+    border-radius: 5px;
+    padding: 1.5rem;
+    box-shadow: 0 5px .5rem rgba(0,0,0,.5);
 }

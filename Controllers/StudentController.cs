@@ -50,4 +50,23 @@ public class StudentController : Controller {
         classroom.add(student);
         return RedirectToAction("ReadAll");
     }
+
+    [HttpGet("new")]
+    public IActionResult Create(){
+        return View();
+    }
+
+    [HttpPost("new")]
+    [ValidateAntiForgeryToken]
+    public IActionResult HandleCreate([FromForm] Student s){
+        classroom.add(s);
+        return RedirectToAction("ReadAll");
+    }
+
+    [HttpPost("delete/{id}")]
+    // [ValidateAntiForgeryToken]
+    public IActionResult Delete(int id){
+        classroom.delete(id);
+        return RedirectToAction("ReadAll");
+    }
 }

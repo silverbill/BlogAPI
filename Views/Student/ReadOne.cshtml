@@ -1,5 +1,12 @@
 @model Student
-<li>
+<div class="student">
     <p> Name: <a href="/students/@(Model.StudentId)/edit">@Model.Name</a> </p>
     <p> Knows C#: @Model.IKnowCSharp </p>
-</li>
+    <p> Delete? 
+        <form 
+            method="post"
+            action="/students/delete/@(Model.StudentId)">
+                <button type="submit">[x]</button>
+        </form>
+    </p>
+</div>
