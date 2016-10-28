@@ -4,12 +4,6 @@ using System.Linq;
 using System;
 using System.Threading.Tasks;
 
-using System.Security.Claims;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Identity;
-using Microsoft.AspNetCore.Mvc.Rendering;
-
 [Route("/students")]
 public class StudentController : Controller {
     private IClassroom classroom;
