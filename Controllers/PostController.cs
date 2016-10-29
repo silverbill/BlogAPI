@@ -5,9 +5,9 @@ using System;
 using System.Threading.Tasks;
 
 [Route("/posts")]
-public class BlogController : Controller {
+public class PostController : Controller {
     private IBlogRepo blog;
-    public BlogController(IBlogRepo b){
+    public PostController(IBlogRepo b){
         blog = b;
     }
 
@@ -38,7 +38,7 @@ public class BlogController : Controller {
     
     public IActionResult Upsert([FromForm] Post post, int postID){
         
-
+        
         var p = blog.get(postID);
         if(p != null) {
             blog.delete(postID);

@@ -11,6 +11,6 @@ public class HomeController : Controller {
 
     [HttpGet]
     public IActionResult Home(){
-        return Redirect("/students");
+        return Redirect("/posts");
     }
 }

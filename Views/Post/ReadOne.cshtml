@@ -1,0 +1,12 @@
+@model Post
+<div class="post">
+    <p> Name: <a href="/posts/@(Model.postID)/edit">@Model.title</a> </p>
+    <p> Content: @Model.title </p>
+    <p> Delete? 
+        <form 
+            method="post"
+            action="/posts/delete/@(Model.postID)">
+                <button type="submit">[x]</button>
+        </form>
+    </p>
+</div>

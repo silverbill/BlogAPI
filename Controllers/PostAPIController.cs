@@ -4,11 +4,11 @@ using System.Linq;
 using System;
 
 [Route("/api/posts")]
-public class BlogAPIController : Controller {
+public class PostAPIController : Controller {
 
     private IBlogRepo blog;
 
-    public BlogAPIController(IBlogRepo b){
+    public PostAPIController(IBlogRepo b){
         blog = b;
     }
 

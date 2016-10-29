@@ -1,0 +1,15 @@
+@model Blog
+
+<h1>Welcome to Gaucho's Blog!</h1>
+
+<hr>
+
+<div class="grid grid-2-400 grid-4-800">
+    @foreach(var post in @Model.getAll()){
+        @Html.Partial("ReadOne", post)
+    }
+</div>
+
+<hr>
+
+<p>Want to create a <a href="/posts/new">new post</a>?</p>
