@@ -30,7 +30,7 @@ public class Handler {
     public void ConfigureServices(IServiceCollection services)
     {
         services.AddMvc(); //.AddXmlSerializerFormatters();
-        services.AddSingleton<IClassroom, Classroom>();
+        services.AddSingleton<IBlogRepo, Blog>();
         services.AddSwaggerGen();
         services.ConfigureSwaggerGen(options =>
         {
